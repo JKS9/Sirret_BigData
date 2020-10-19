@@ -62,4 +62,3 @@ npm start
 ```
 
 Pm2 va lancer 4 process simultanément sur votre machine pour faire des ajouts en base rapidement.
-llllll
