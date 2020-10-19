@@ -7,7 +7,7 @@ Optimisation d'insertion de donnée en BDD avec Nodejs et Mongoose
 - clone le projet avec github
 
 ```bash
-git clone $$$$$$
+git clone https://github.com/JKS9/Sirret_BigData.git
 ```
 - install node_modules
 ```bash
@@ -29,9 +29,15 @@ pm2 monit
 
 Vous devez télécharger le fichier csv “Sirene : Fichier StockEtablissement” à cette adresse :
 
-* https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/
+```bash
+https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/
+```
+Et placer le à la racine du projet et renommer le en :
 
-faite : 
+```bash
+dataMain.csv
+```
+commandes : 
 ```bash
 npm run import
 ```
