@@ -1,0 +1,19 @@
+{
+  "name": "bigdata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "import": "node import.js",
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.3",
+    "csv-split-stream": "^1.0.2",
+    "mongoose": "^5.10.6",
+    "pm2": "^4.4.1"
+  }
+}
