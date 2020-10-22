@@ -7,6 +7,7 @@ const dirData = "/Users/jks/Documents/DEV/PRO/BigData/src/data"
 let nb
 let FileList = []
 
+
 fs.readdir(dirData,(err, files) => {
     if(err) throw err;
 
@@ -17,6 +18,8 @@ fs.readdir(dirData,(err, files) => {
 })
 
 pm2.connect(function(err) {
+		console.time("time parse")
+
     if (err) {
       console.error(err)
       process.exit(2)
@@ -52,7 +55,7 @@ pm2.connect(function(err) {
 					console.log("porcess "+worker+" FINISHED")
 
 					nb = nb +1
-					if (nb <= 9-1 ) {
+					if (nb <= length-1 ) {
 						const config = {
 							name: nb+'.csv',
 							script    : 'script.js',
@@ -67,20 +70,10 @@ pm2.connect(function(err) {
 						})
 						console.log('prosses : '+ nb +' started')
 					} else {
-						exec("pm2 kill", (error, stdout, stderr) => {
-							if (error) {
-									console.log(`error: ${error.message}`)
-									return
-							}
-							if (stderr) {
-									console.log(`stderr: ${stderr}`)
-									return
-							}
-							console.log(`stdout: ${stdout}`)
-						})
-						process.exit()
+						console.log("Finished")
 					}
-					
+					console.timeEnd("time parse")
+
         })
     })
 })

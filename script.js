@@ -9,9 +9,6 @@ const host = `mongodb://127.0.0.1:27017/sirret`
 const connect = mongoose.createConnection(host, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = connect.collection('sirret');
 
-
-console.log("hello my number is "+process.argv[2]+ " / and my name is ", process.argv[2])
-
 if(!process.argv[2]) {
     console.log("ficher non trouvé")
     return false
@@ -26,7 +23,7 @@ fs.createReadStream(dirData+"/"+process.argv[2]+'.csv')
     .on('end', () => {
         db.insertMany(results, function(err,result) {
             if (err) {
-                console.log("echec de l'ajout");
+                console.log("echec de l'ajout")
             }else{
                 process.send({
                     type: 'worker:end',
